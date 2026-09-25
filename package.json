@@ -1,0 +1,28 @@
+{
+  "name": "chrom-review-tool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "本地色谱曲线复核工具（Vue 3 + TypeScript + Plotly + Web Worker + IndexedDB）",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:lite": "node scripts/build-esbuild.mjs",
+    "check:math": "esbuild scripts/check.ts --bundle --platform=node --format=esm --outfile=node_modules/.check.mjs && node node_modules/.check.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ml-matrix": "^6.15.0",
+    "ml-savitzky-golay": "^5.0.0",
+    "plotly.js-dist-min": "^4.1.1",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "esbuild": "^0.21.5",
+    "esbuild-plugin-vue3": "^0.5.1",
+    "typescript": "~5.6.3",
+    "vite": "^5.4.11",
+    "vue-tsc": "^2.1.10"
+  }
+}
